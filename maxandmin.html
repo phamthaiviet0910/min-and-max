@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="result"></div>
+    <div class="min"></div>
+    <div class="max"></div>
+</body>
+<script>
+    var result = document.querySelector('.result');
+    var minNumber = document.querySelector('.min');
+    var maxNumber = document.querySelector('.max');
+    var numbers = [];
+    for (var i = 0; i < 100; i++){
+        numbers[i] = Math.floor(Math.random() * 101);
+    }
+    result.innerHTML = numbers
+
+    function findMin(){
+        var min = numbers[0];
+        for (var j = 0; j < 100; j++){
+            if (numbers[j] < min){
+                min = numbers[j]
+            }
+        }
+        minNumber.innerHTML = "Min number is: " + min
+    }
+    findMin()
+    function findMax(){
+        var max = numbers[0];
+        for (var j = 0; j < 100; j++){
+            if (numbers[j] > max){
+                max = numbers[j]
+            }
+        }
+        maxNumber.innerHTML = "Max number is: " + max
+    }
+    findMax()
+</script>
+</html>
